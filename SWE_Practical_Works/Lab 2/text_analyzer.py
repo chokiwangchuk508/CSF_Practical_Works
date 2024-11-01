@@ -1,64 +1,33 @@
+from collections import Counter
+import time
+
 def read_file(filename):
+    """Read the contents of a file and return it as a string."""
     with open(filename, 'r') as file:
         return file.read()
 
-# Test the function
-content = read_file('/Users/macbookairm1/Desktop/SWE_Practical_Works/Lab 2/sample.txt')
-print(content[:100])  # Print the first 100 characters
-
 def count_lines(content):
+    """Return the number of lines in the content."""
     return len(content.split('\n'))
-
-# Test the function
-num_lines = count_lines(content)
-print(f"Number of lines: {num_lines}")
-
-def count_lines(content):
-    return len(content.split('\n'))
-
-# Test the function
-num_lines = count_lines(content)
-print(f"Number of lines: {num_lines}")
 
 def count_words(content):
+    """Return the number of words in the content."""
     return len(content.split())
 
-# Test the function
-num_words = count_words(content)
-print(f"Number of words: {num_words}")
-
-from collections import Counter
-
 def most_common_word(content):
+    """Return the most common word and its count in the content."""
     words = content.lower().split()
     word_counts = Counter(words)
-    return word_counts.most_common(1)[0]
-
-# Test the function
-common_word, count = most_common_word(content)
-print(f"Most common word: '{common_word}' (appears {count} times)")
-
-from collections import Counter
-
-def most_common_word(content):
-    words = content.lower().split()
-    word_counts = Counter(words)
-    return word_counts.most_common(1)[0]
-
-# Test the function
-common_word, count = most_common_word(content)
-print(f"Most common word: '{common_word}' (appears {count} times)")
+    return word_counts.most_common(1)[0]  # Returns a tuple (word, count)
 
 def average_word_length(content):
+    """Return the average word length in the content."""
     words = content.split()
     total_length = sum(len(word) for word in words)
-    return total_length / len(words)
-
-# Test the function
-avg_length = average_word_length(content)
-print(f"Average word length: {avg_length:.2f} characters")
+    return total_length / len(words) if words else 0  # Handle empty content
 
 def analyze_text(filename):
+    """Analyze the text in a file and print various statistics."""
     content = read_file(filename)
     
     num_lines = count_lines(content)
@@ -72,20 +41,19 @@ def analyze_text(filename):
     print(f"Most common word: '{common_word}' (appears {count} times)")
     print(f"Average word length: {avg_length:.2f} characters")
 
-# Run the analysis
-analyze_text('sample.txt')
+# Run the analysis on your sample file
+analyze_text('/Users/macbookairm1/Desktop/SWE_Practical_Works/Lab 2/sample.txt')
 
+# Fibonacci sequence functions
 def fibonacci_recursive(n):
+    """Return the nth Fibonacci number using recursion."""
     if n <= 1:
         return n
     else:
-        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
-
-# Test the function
-for i in range(10):
-    print(f"F({i}) = {fibonacci_recursive(i)}")
+        return fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 
 def fibonacci_iterative(n):
+    """Return the nth Fibonacci number using an iterative approach."""
     if n <= 1:
         return n
     a, b = 0, 1
@@ -93,13 +61,8 @@ def fibonacci_iterative(n):
         a, b = b, a + b
     return b
 
-# Test the function
-for i in range(10):
-    print(f"F({i}) = {fibonacci_iterative(i)}")
-
-import time
-
 def measure_time(func, n):
+    """Measure the execution time of a function."""
     start = time.time()
     result = func(n)
     end = time.time()
@@ -114,23 +77,23 @@ print(f"Recursive: F({n}) = {recursive_result}, Time: {recursive_time:.6f} secon
 print(f"Iterative: F({n}) = {iterative_result}, Time: {iterative_time:.6f} seconds")
 
 def fibonacci_generator(limit):
+    """Generate the Fibonacci sequence up to the limit."""
     a, b = 0, 1
-    count = 0
-    while count < limit:
+    for _ in range(limit):
         yield a
         a, b = b, a + b
-        count += 1
 
 # Test the generator
 for i, fib in enumerate(fibonacci_generator(10)):
     print(f"F({i}) = {fib}")
 
 def fibonacci_memoized(n, memo={}):
+    """Return the nth Fibonacci number using memoization."""
     if n in memo:
         return memo[n]
     if n <= 1:
         return n
-    memo[n] = fibonacci_memoized(n-1, memo) + fibonacci_memoized(n-2, memo)
+    memo[n] = fibonacci_memoized(n - 1, memo) + fibonacci_memoized(n - 2, memo)
     return memo[n]
 
 # Test the memoized function
@@ -138,6 +101,5 @@ for i in range(10):
     print(f"F({i}) = {fibonacci_memoized(i)}")
 
 # Compare performance with the original recursive function
-n = 30
 memoized_result, memoized_time = measure_time(fibonacci_memoized, n)
 print(f"Memoized: F({n}) = {memoized_result}, Time: {memoized_time:.6f} seconds")
