@@ -53,6 +53,9 @@ Video Demo:
 **Notes**
 - Using the code above I was able to get enough hay to unlock the tile
 - These features were unlocked too: variables and functions.
+- Enhanced character interaction.
+  The necessity for potential exit conditions or delays to manage resource consumption effectively.
+
 .
 .
 .
@@ -68,8 +71,7 @@ Video Demo:
 In "The Farmer Was Replaced," players encounter several challenges primarily related to programming and automation. One of the main hurdles is the learning curve associated with grasping programming concepts, which can be particularly daunting for those without prior coding experience. As players progress, tasks become increasingly complex, requiring more sophisticated coding solutions, and balancing multiple farming activities simultaneously can be overwhelming. Efficient resource management is also crucial, as mismanagement can lead to inefficiencies and hinder progress. Players often face the challenge of debugging their code, which can be time-consuming and frustrating, especially when trying to identify and fix issues. Additionally, the need for continuous optimization puts pressure on players to refine their strategies repeatedly, which can be mentally taxing. These challenges contribute to the game's engaging yet demanding nature, making it a rewarding experience for those who enjoy problem-solving and coding.
 ## Learnings
 Note down what different algorithms and methods of programming you learnt 
-- In "The Farmer Was Replaced," players can learn various algorithms and programming methods that enhance their problem-solving skills. Key concepts include looping, as players use loops to automate repetitive tasks like harvesting and planting. Conditional statements are crucial for making decisions based on inventory levels, such as choosing what to plant based on the quantity of hay. Players also explore function creation to encapsulate specific tasks, promoting code reusability and organization. Pathfinding algorithms can be applied to navigate the drone efficiently through the farm, while resource management techniques help optimize the use of materials and time. Overall, the game serves as a practical introduction to basic programming concepts and algorithms, fostering logical thinking and computational skills.
-
+- In "The Farmer Was Replaced," I learned several basic programming concepts and methods. They use loops to automate repetitive tasks like planting and harvesting. Conditional statements help them make decisions based on their resources, such as what to plant depending on what they have. Players also create functions to group related tasks, making their code easier to manage. They can apply pathfinding techniques to help the drone move efficiently around the farm. Overall, the game provides a fun way to understand simple programming ideas and improve problem-solving skills.
 ## References
 List any resources, articles, or libraries you used or referenced while working on this project.
 1. [https://youtu.be/9oUIS8qFBys?si=0IbSOeVZGLvsyiuQ](URL)
